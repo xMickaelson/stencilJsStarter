@@ -1,0 +1,10 @@
+button {
+  all: unset;
+  background: #88e97b;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #000000;
+  border-radius: 15px 20px;
+  font-family: sans-serif;
+}

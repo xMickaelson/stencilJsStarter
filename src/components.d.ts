@@ -6,6 +6,19 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BarChart {
+        "barColor": string;
+        "barSpacing": number;
+        "data": number[];
+        "height": number;
+        "labels": string[];
+        "width": number;
+        "xAxisLabel": string;
+        "yAxisLabel": string;
+    }
+    interface L4Button {
+        "buttonText": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -20,19 +33,58 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PieChart {
+        "colors": string[];
+        "data": number[];
+        "radius": number;
+    }
 }
 declare global {
+    interface HTMLBarChartElement extends Components.BarChart, HTMLStencilElement {
+    }
+    var HTMLBarChartElement: {
+        prototype: HTMLBarChartElement;
+        new (): HTMLBarChartElement;
+    };
+    interface HTMLL4ButtonElement extends Components.L4Button, HTMLStencilElement {
+    }
+    var HTMLL4ButtonElement: {
+        prototype: HTMLL4ButtonElement;
+        new (): HTMLL4ButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPieChartElement extends Components.PieChart, HTMLStencilElement {
+    }
+    var HTMLPieChartElement: {
+        prototype: HTMLPieChartElement;
+        new (): HTMLPieChartElement;
+    };
     interface HTMLElementTagNameMap {
+        "bar-chart": HTMLBarChartElement;
+        "l4-button": HTMLL4ButtonElement;
         "my-component": HTMLMyComponentElement;
+        "pie-chart": HTMLPieChartElement;
     }
 }
 declare namespace LocalJSX {
+    interface BarChart {
+        "barColor"?: string;
+        "barSpacing"?: number;
+        "data"?: number[];
+        "height"?: number;
+        "labels"?: string[];
+        "width"?: number;
+        "xAxisLabel"?: string;
+        "yAxisLabel"?: string;
+    }
+    interface L4Button {
+        "buttonText"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -47,15 +99,26 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PieChart {
+        "colors"?: string[];
+        "data"?: number[];
+        "radius"?: number;
+    }
     interface IntrinsicElements {
+        "bar-chart": BarChart;
+        "l4-button": L4Button;
         "my-component": MyComponent;
+        "pie-chart": PieChart;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bar-chart": LocalJSX.BarChart & JSXBase.HTMLAttributes<HTMLBarChartElement>;
+            "l4-button": LocalJSX.L4Button & JSXBase.HTMLAttributes<HTMLL4ButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pie-chart": LocalJSX.PieChart & JSXBase.HTMLAttributes<HTMLPieChartElement>;
         }
     }
 }

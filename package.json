@@ -40,11 +40,18 @@
   },
   "devDependencies": {
     "@stencil/core": "^4.7.0",
+    "@types/backbone": "^1.4.22",
     "@types/jest": "^29.5.6",
+    "@types/jquery": "^3.5.32",
     "@types/node": "^16.18.11",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "puppeteer": "^21.9.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "^1.6.0",
+    "jointjs": "^3.7.7",
+    "jquery": "^3.7.1"
+  }
 }
